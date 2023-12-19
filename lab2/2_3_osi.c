@@ -80,7 +80,7 @@ int main()
 
     for (int i = 0; i < COUNT_PHIL; i++) 
     {
-        semctl(sem_id, i, SETVAL, 1); // устанавливаем значение семафоров
+        semctl(sem_id, i, SETVAL, 1); 
     }
 
     for (int i = 0; i < COUNT_PHIL; i++)
@@ -102,10 +102,10 @@ int main()
 
     for (int i = 0; i < COUNT_PHIL; i++)
     {
-        waitpid(philosopher[i], NULL, 0); //ожидаем завершение процессов
+        waitpid(philosopher[i], NULL, 0); 
     }
 
-    semctl(sem_id, 0, IPC_RMID); //удаление набора семафров
+    semctl(sem_id, 0, IPC_RMID); 
     return 0;
     
 }
